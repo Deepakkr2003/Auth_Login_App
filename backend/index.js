@@ -6,7 +6,7 @@ const AuthRouter = require('./Routes/AuthRouter')
 const ProductRouter = require('./Routes/ProductRouter')
 
 require('dotenv').config();
-const connect=require('./Models/db')
+require('./Models/db')
 
 const users=require('./Models/User')
 
@@ -24,8 +24,5 @@ app.use('/products',ProductRouter)
 
 app.listen(PORT,async()=>{
     console.log(`server is running on ${PORT}`);
-    await connect();
-    console.log('Mongo db connected');
-    
     
 })
